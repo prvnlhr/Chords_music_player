@@ -33,8 +33,8 @@ body::-webkit-scrollbar {
   position: fixed;
   /* height: 100%;
   width: 100%; */
-  height: 95%;
-  width: 70%;
+  /* height: 95%; */
+  /* width: 70%; */
   background-color: #eee4ee;
   background-image: linear-gradient(0deg, #eee4ee 41%, #f9ebe4 84%);
 

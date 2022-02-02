@@ -10,10 +10,10 @@
   -ms-user-select: none;
   user-select: none;
 }
-html {
+/* html {
   height: 100vh;
   min-height: 100vh;
-}
+} */
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

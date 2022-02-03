@@ -39,3 +39,17 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+#artistSectionHeaderCountText {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 4px 0px 0px 20px;
+  color: gray;
+  /* border: 1px solid green; */
+}
+#artistSectionHeaderText {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}

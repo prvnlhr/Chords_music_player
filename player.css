@@ -12,6 +12,7 @@
   height: 100%;
   /* border: 1px solid violet; */
 }
+
 .playerHeaderWrapper {
   grid-area: playerHeaderWrapper;
   display: flex;
@@ -20,12 +21,14 @@
   padding: 0px 0px 0px 25px;
   /* border: 1px solid yellow; */
 }
+
 #playerHeaderWrapperText {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 600;
   margin: 0px 0px 0px 0px;
 }
+
 .playerMainWrapper {
   grid-area: playerMainWrapper;
   width: 100%;
@@ -34,4 +37,25 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.playerComponent {
+  width: 90%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0px 0px 0px 20px;
+  display: grid;
+  grid-template-rows: 60% 20% 20%;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "nowPlayingSongsContainer"
+    "nowPlayingProgessWrapper"
+    "nowPlayingButtonWrapper";
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  -webkit-box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+  -moz-box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+  box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
 }

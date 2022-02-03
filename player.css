@@ -59,3 +59,13 @@
   -moz-box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
   box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
 }
+
+#imgTag-curr {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+}

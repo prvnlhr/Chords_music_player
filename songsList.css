@@ -79,3 +79,28 @@
   padding-right: 10px;
   cursor: pointer;
 }
+
+
+
+.songWrapper {
+  width: 90%;
+  height: 50px;
+  min-height: 50px;
+  background-color: white;
+  -webkit-box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+  -moz-box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+  box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+
+  margin: 5px 0px 5px 0px;
+  border-radius: 8px;
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: minmax(0, 0.3fr) 50px minmax(0, 1fr) minmax(0, 1fr) minmax(
+      0,
+      0.3fr
+    );
+  grid-template-rows: 100%;
+  grid-template-areas: "songNoDiv songArtDiv songNameDiv songArtistDiv songDurationDiv";
+  padding-right: 10px;
+  cursor: pointer;
+}

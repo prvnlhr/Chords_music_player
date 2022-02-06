@@ -161,3 +161,45 @@ inputField.addEventListener("input", () => {
     })
     .join("");
 
+  searchContainer.innerHTML = currListHTML;
+
+  // ADDING CLICK EVENT LISTNER FOR RENDER SEARCH ITEMS_____________________
+  const searchItemWrapper = document.querySelectorAll(".searchItemWrapper");
+  for (let i = 0; i < currListHTML.length; i++) {
+    if (searchItemWrapper[i]) {
+      searchItemWrapper[i].addEventListener("click", (e) => {
+        // ___________________________________________________________________________________________________
+        // console.log("sitem", finalSearchData[i]);
+        // return;
+        if (finalSearchData[i]["album"]) {
+          // console.log(
+          //   "album",
+          //   finalSearchData[i].album,
+          //   finalSearchData[i].albumSongs
+          // );
+
+          clickedAlbumIndex = musicData.findIndex(
+            (p) => p.album == finalSearchData[i].album
+          );
+          currSongDetails.albumIndex = clickedAlbumIndex;
+
+          renderList(
+            clickedAlbumIndex,
+            finalSearchData[i].albumSongs,
+            "albums"
+          );
+          // ___________________________________________________________________________________________________
+        } else if (finalSearchData[i]["songName"]) {
+          // console.log("song", [finalSearchData[i]]);
+          clickedAlbumIndex = allSongsArray.findIndex(
+            (p) => p.songName == finalSearchData[i].songName
+          );
+          // console.log('index',clickedAlbumIndex)
+          renderList(clickedAlbumIndex, [finalSearchData[i]], "songs");
+        }
+      });
+    }
+  }
+
+  return;
+});

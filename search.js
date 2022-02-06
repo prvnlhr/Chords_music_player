@@ -19,8 +19,33 @@ const playPauseIcon = document.querySelector("#playPauseIcon");
 var currPlayingSongName = document.querySelector("#currSongName");
 var currPlayingSongArtists = document.querySelector("#currArtistName");
 var currPlayingSongImg = document.querySelector("#imgTag-curr");
+//  SET CLICKED SONG TO PLAYER_______________________________________________________________
 
+const setCurrPlaying = ({ songUrl, songCoverImg, songName, artist }) => {
+  // console.log("fgfgfgfg");
+  currSongDetails.albumIndex = null;
+  currSongDetails.songIndex = 0;
 
+  audioSrcTag.src = songUrl;
+  currPlayingSongImg.src = songCoverImg;
+  currPlayingSongName.innerText = songName;
+  currPlayingSongArtists.innerText = artist;
+
+  // progressFill.style.width = `${0}%`;
+  playPauseIcon.classList.remove("fa-play");
+  playPauseIcon.classList.remove("fa-pause");
+  playPauseIcon.classList.add("fa-play");
+
+  //   when audio metadata loads set its duration inside player
+  audioTag.onloadedmetadata = function () {
+    setAudioDuration();
+  };
+  //   finaly load song
+  audioTag.load();
+  togglePlayPause();
+};
+
+// _RENDERING CLICKED ITEMS__________________________________________________________________
 
 const renderClickedItem = (currList) => {
   currListHTML = currList
@@ -62,7 +87,6 @@ const renderClickedItem = (currList) => {
     });
   }
 };
-
 
 const searchIcon = document.querySelector("#searchIcon");
 
@@ -106,3 +130,34 @@ inputField.addEventListener("input", () => {
   } else {
     finalSearchData = filteredArtistAndSongsArray;
   }
+
+  if (finalSearchData.length > 0) {
+    searchContainer.style.display = "flex";
+  }
+  // console.log("fl", finalSearchData);
+
+  const currListHTML = finalSearchData
+    .map((item, index) => {
+      return `<div class="searchItemWrapper">
+
+        <div class="noDiv">
+            <p>${index + 1}</p>
+        </div>
+        <div class="artDiv">
+        <img id="imgTag-search-div" src=${
+          item.albumArt ? item.albumArt : item.songCoverImg
+        } />
+        </div>
+        <div class="nameDiv">
+            <p>${item.album ? item.album : item.songName}</p>
+        </div>
+        <div class="artistNameDiv">
+            <p>${item.albumArtist ? item.albumArtist : item.artist}</p>
+        </div>
+        <div class="typeName">
+            <p>${item.album ? "Album" : "Song"}</p>
+        </div>
+      </div> `;
+    })
+    .join("");
+

@@ -62,3 +62,47 @@ const renderClickedItem = (currList) => {
     });
   }
 };
+
+
+const searchIcon = document.querySelector("#searchIcon");
+
+searchIcon.onclick = () => {
+  inputField.value = "";
+  searchIcon.classList.replace("fa-xmark", "fa-magnifying-glass");
+  searchContainer.style.display = "none";
+};
+
+// SEARCHING FOR INPUT LOGIC__________________________________________
+
+inputField.addEventListener("input", () => {
+  const key = inputField.value;
+  // console.log(key.length);
+  if (key.length <= 0) {
+    searchContainer.style.display = "none";
+    searchIcon.classList.replace("fa-xmark", "fa-magnifying-glass");
+    return;
+  }
+
+  if (key.length >= 1) {
+    searchIcon.classList.replace("fa-magnifying-glass", "fa-xmark");
+  }
+
+  const filteredAlbumsArray = musicData.filter(
+    (item) =>
+      item.album.toLowerCase().includes(inputField.value.toLowerCase()) ||
+      item.albumArtist.toLowerCase().includes(inputField.value.toLowerCase())
+  );
+
+  const filteredArtistAndSongsArray = allSongsArray.filter(
+    (item) =>
+      item.artist.toLowerCase().includes(inputField.value.toLowerCase()) ||
+      item.songName.toLowerCase().includes(inputField.value.toLowerCase())
+  );
+
+  if (filteredAlbumsArray && filteredArtistAndSongsArray) {
+    finalSearchData = filteredArtistAndSongsArray.concat(filteredAlbumsArray);
+  } else if (filteredAlbumsArray) {
+    finalSearchData = filteredAlbumsArray;
+  } else {
+    finalSearchData = filteredArtistAndSongsArray;
+  }

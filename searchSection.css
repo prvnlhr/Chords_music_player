@@ -1,0 +1,16 @@
+color: slategray;
+letter-spacing: 0.3px;
+width: 100%;
+backface-visibility: hidden;
+box-orient: vertical;
+-moz-box-orient: vertical; /* Mozilla */
+-webkit-box-orient: vertical; /* WebKit */
+display: box;
+display: -moz-box; /* Mozilla */
+display: -webkit-box; /* WebKit */
+text-overflow: ellipsis;
+-webkit-line-clamp: 1;
+overflow: hidden !important;
+
+/* border: 1px solid black; */
+}

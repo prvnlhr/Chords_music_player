@@ -156,7 +156,7 @@
   -webkit-line-clamp: 1;
   overflow: hidden !important;
 
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .typeName {

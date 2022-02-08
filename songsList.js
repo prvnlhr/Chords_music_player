@@ -78,7 +78,7 @@ const renderList = (dataIndex, dataArr, dataT) => {
 
   for (let songIndex = 0; songIndex < songWrappers.length; songIndex++) {
     songWrappers[songIndex].addEventListener("click", (e) => {
-      console.log("type", currPlayListDetails.from);
+      // console.log("type", currPlayListDetails.from);
       let currSongData;
 
       if (currPlayListDetails.from === "songs") {
@@ -89,7 +89,7 @@ const renderList = (dataIndex, dataArr, dataT) => {
       } else if (currPlayListDetails.from === "albums") {
         currSongData =
           musicData[currPlayListDetails.currListDataIndex].albumSongs[
-          songIndex
+            songIndex
           ];
       }
 

@@ -1,0 +1,81 @@
+.songsListWrapper {
+  /* position: relative; */
+  display: grid;
+  grid-template-rows: 15% 85%;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "songsHeadingWrapper"
+    "songsListContainer";
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /* border: 1px solid violet; */
+  width: 100%;
+  height: 100%;
+}
+.songsHeadingWrapper {
+  grid-area: songsHeadingWrapper;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 0px 0px 0px 6%;
+  /* border: 1px solid blue; */
+}
+#songsHeadingWrapperText {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+.songsListContainer {
+  grid-area: songsListContainer;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  /* padding: 20px 0px 20px 0%; */
+  /* margin-left: 10%; */
+  box-sizing: border-box;
+}
+
+.songsListContainer::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0);
+  height: 4px;
+  width: 5px;
+}
+.songsListContainer::-webkit-scrollbar-track {
+  background-color: rgb(231, 228, 228);
+  background-color: rgba(231, 228, 228, 0.062);
+  width: 2px;
+}
+.songsListContainer::-webkit-scrollbar-thumb {
+  background-color: #860d8663;
+  border-radius: 4px;
+}
+
+.songWrapper {
+  width: 90%;
+  height: 50px;
+  min-height: 50px;
+  background-color: white;
+  -webkit-box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+  -moz-box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+  box-shadow: -3px 7px 30px -20px rgba(99, 96, 99, 1);
+
+  margin: 5px 0px 5px 0px;
+  border-radius: 8px;
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: minmax(0, 0.3fr) 50px minmax(0, 1fr) minmax(0, 1fr) minmax(
+      0,
+      0.3fr
+    );
+  grid-template-rows: 100%;
+  grid-template-areas: "songNoDiv songArtDiv songNameDiv songArtistDiv songDurationDiv";
+  padding-right: 10px;
+  cursor: pointer;
+}

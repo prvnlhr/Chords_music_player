@@ -15,3 +15,6 @@ As of now Chords has static music files, but in coming song will i'll make songs
 4. Shows playing animation for current song.
 5. Shows ablum covers, single songs cover image while playing.
 6. Player render songs list when user clicks searched album dynamically.
+
+
+![Screenshot 2023-03-15 161222](https://user-images.githubusercontent.com/70936225/225285665-2f34ed1c-f05d-455a-af75-a48f86b02322.png)

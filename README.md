@@ -1,5 +1,10 @@
-# Chords_music_player 
+
+
+<h3><img align="center" height="30" src="https://user-images.githubusercontent.com/70936225/225286181-801cef3f-1090-4043-a648-b3b52f87766e.png">  Chords_music_player</h3> 
+
 https://chordsplayer.vercel.app/
+
+
 
 Chords is a static music player app built using Javascript, HTML, css and deployed on Vercel.
 <br>
